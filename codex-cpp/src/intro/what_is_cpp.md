@@ -1,5 +1,4 @@
-
-## Introduction to C++
+# What is C++
 
 ```admonish
 Some of the topics on this page may be confusing depending on your level of experience; however, they will all be explained in this course.

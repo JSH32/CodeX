@@ -1,4 +1,4 @@
-## The Main Function in C++
+# The Main Function in C++
 
 In C++, the main function is the starting point of your program. It is where your program begins execution. Every C++ program must have a main function, as it is the first function that gets executed when your program runs. The main function is responsible for managing the flow of your program and calling other functions as needed.
 

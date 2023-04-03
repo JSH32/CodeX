@@ -1,14 +1,14 @@
-## Header Files
+# Header Files
 
 While learning C++, you'll often come across the term "header files." In this section, we will discuss what header files are, why they are essential, and how to use them effectively in your C++ programs.
 
-### What are header files?
+## What are header files?
 
 Header files are simply text files with the extension `.h` or `.hpp` that contain declarations of functions, classes, variables, constants, and other elements that you want to share across multiple source files (`.cpp` files) in your program. They allow you to separate the implementation (the actual code) from the interface (the declarations) of your program.
 
 In other words, header files act as an interface that tells the compiler what functions, classes, and other elements are available for use without actually providing the implementation. This makes your code more organized, modular, and easier to maintain.
 
-### Why are header files important?
+## Why are header files important?
 
 Header files play a crucial role in C++ programming for several reasons:
 
@@ -18,7 +18,7 @@ Header files play a crucial role in C++ programming for several reasons:
 
 3. **Easier Compilation**: When you modify a source file, only that file needs to be recompiled, not the entire program. If you didn't use header files, any change to a function or class would require recompiling every file that uses it.
 
-### How to use header files in C++?
+## How to use header files in C++?
 
 To use header files in your C++ program, you need to follow these steps:
 
@@ -42,7 +42,7 @@ To use header files in your C++ program, you need to follow these steps:
 
 4. **Implement the declared elements**: In a separate source file (`.cpp` file), provide the implementation for the elements declared in the header file.
 
-### Example
+## Example
 
 > `my_math_functions.h` (header file)
 > 

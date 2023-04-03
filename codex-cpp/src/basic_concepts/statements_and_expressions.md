@@ -1,8 +1,8 @@
-## Statements and Expressions in C++
+# Statements and Expressions in C++
 
 In C++ programming, statements and expressions are the building blocks of your code.
 
-### Expressions
+## Expressions
 
 An expression is a piece of code that evaluates or calculates a value. It consists of variables, constants, and operators (`+`, `-`, `*`, `/`, etc.) combined in a meaningful way. Think of expressions as a simple math equation or a question that the program needs to answer.
 
@@ -14,7 +14,7 @@ x * y // multiply
 a > b // comparison
 ```
 
-### Statements
+## Statements
 
 A statement, on the other hand, is a complete line of code that performs an action. It usually consists of one or more expressions joined together. Statements end with a semicolon (`;`), which tells the compiler that the line is complete.
 
@@ -26,7 +26,11 @@ x = x + 3; // Assignment statement
 std::cout << x; // Output statement (or function call)
 ```
 
-### Types of Statements
+## Types of Statements
+
+```admonish
+Control Statements and Functions will be discussed further in the next two chapters.
+```
 
 C++ has several types of statements, including:
 
@@ -44,7 +48,8 @@ C++ has several types of statements, including:
     name = "John Doe";
     ```
 
-3. **Control Statements**: These statements control the flow of your program, such as loops and conditional statements. For example:
+3. **Control Statements**: These statements control the flow of your program, such as loops and conditional statements.
+    For example:
 
     ```cpp
     if (age > 18) {
@@ -66,7 +71,7 @@ C++ has several types of statements, including:
     int result = add_numbers(5, 3); // Calls the 'add_numbers' function with arguments 5 and 3
     ```
 
-### Combining Statements and Expressions
+## Combining Statements and Expressions
 
 In C++ programs, you'll often see expressions and statements combined. For example:
 

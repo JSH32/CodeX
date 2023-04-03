@@ -1,8 +1,8 @@
-## Functions in C++
+# Functions in C++
 
 In C++, functions are blocks of code that perform a specific task and can be called (or invoked) from other parts of the program. Functions make code easier to understand, maintain, and reuse by breaking the program into smaller, modular components.
 
-### Terminology
+## Terminology
 
 **Function definition**: A function definition is a block of code that defines the function's behavior, including its input parameters, output, and the actual code that will be executed when the function is called.
 
@@ -14,7 +14,7 @@ In C++, functions are blocks of code that perform a specific task and can be cal
 
 **Return type**: The return type is the data type of the value that a function returns after its execution. If a function does not return any value, its return type is `void`.
 
-### Syntax
+## Syntax
 
 Here is the basic syntax for declaring and defining a function in C++:
 
@@ -30,7 +30,7 @@ return_type function_name(parameter_type parameter1, parameter_type parameter2) 
 }
 ```
 
-### Example
+## Example
 
 ```cpp
 #include <iostream>
@@ -54,7 +54,7 @@ int sum(int a, int b) {
 
 In this example, we declare a function called `sum` with a return type of `int` and two input parameters of type `int`. The function definition provides the actual implementation of the `sum` function, which calculates the sum of the input parameters and returns the result. The `sum` function is called from the `main` function, and the result is printed to the console.
 
-### Key Points
+## Key Points
 
 - Functions help to modularize and reuse code, making it easier to understand and maintain.
 - Functions have a name, return type, and input parameters.
