@@ -1,8 +1,8 @@
 <img width="550" src="https://raw.githubusercontent.com/JSH32/CodeX/master/.github/assets/banner.png"><br>
 
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![License: CC0 1.0 Universal](https://img.shields.io/badge/License-CC0%201.0%20Universal-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-Welcome to the CodeX Foundation, a Free and Open Source Software (FOSS) initiative dedicated to creating educational materials on a variety of computational topics. Our mission is to provide high-quality resources for learners, enthusiasts, and professionals interested in programming, computer science, data science, artificial intelligence, and other topics.
+Welcome to the CodeX Foundation, a Free and Open Source Software (FOSS) public domain initiative dedicated to creating educational materials on a variety of computational topics. Our mission is to provide high-quality resources for learners, enthusiasts, and professionals interested in programming, computer science, data science, artificial intelligence, and other topics.
 
 ## Our Mission
 We believe that everyone should have access to educational resources that enable them to learn cutting-edge technologies and keep up with the most recent advancements in computing fields. Our goal is to:
@@ -45,6 +45,6 @@ You can find our resources under the respective directories in this repository.
 
 ## License
 
-All our content is released under the `Creative Commons Attribution 4.0 International License` (`CC BY 4.0`), which means you are free to share and adapt the material for any purpose as long as you give appropriate credit to the CodeX Foundation and indicate if changes were made.
+All our content is released under the `Public Domain Dedication` (`CC0 1.0`), which means you are free to share and adapt the material for any purpose as long as you give appropriate credit to the CodeX Foundation and indicate if changes were made.
 
 Happy learning!

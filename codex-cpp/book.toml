@@ -21,5 +21,6 @@ additional-js = ["./sidebar/sidebar.js"]
 additional-css = [
     "./theme/catppuccin.css",
     "./theme/catppuccin-highlight.css",
-    "./sidebar/style.css"
-, "././mdbook-admonish.css"]
+    "./sidebar/style.css",
+    "././mdbook-admonish.css"
+]
