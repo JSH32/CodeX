@@ -1,0 +1,25 @@
+[book]
+authors = ["JSH32"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Codex: C++, Introduction for Entry Level Programmers"
+
+[preprocessor]
+
+[preprocessor.catppuccin]
+assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
+
+[output]
+
+[output.html]
+additional-js = ["./sidebar/sidebar.js"]
+additional-css = [
+    "./theme/catppuccin.css",
+    "./theme/catppuccin-highlight.css",
+    "./sidebar/style.css"
+, "././mdbook-admonish.css"]
