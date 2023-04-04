@@ -8,6 +8,7 @@
 - [Development Environments](./dev_environment/index.md)
     - [Visual Studio](./dev_environment/visual_studio/index.md)
 - [Basic Concepts](./basic_concepts/index.md)
+    - [Comments](./basic_concepts/comments.md)
     - [Data Types](./basic_concepts/data_types.md)
     - [Variables](./basic_concepts/variables.md)
     - [Strings and Arrays](./basic_concepts/strings_and_arrays.md)

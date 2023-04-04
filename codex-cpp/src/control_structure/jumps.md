@@ -16,7 +16,7 @@ Let's jump into each one in more detail!
 The `break` statement is used to exit a loop or a `switch` statement prematurely, skipping any remaining iterations or cases.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {
@@ -24,7 +24,7 @@ int main() {
         if (i == 5) {
             break;
         }
-        std::cout << "Iteration: " << i << std::coutendl;
+        std::cout << "Iteration: " << i << std::endl;
     }
 
     return 0;
@@ -39,7 +39,7 @@ In this example, the loop will only print the numbers from 0 to 4. When `i` reac
 The `continue` statement is used to skip the current iteration of a loop and move on to the next one, ignoring any code that comes after it in the loop body.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {
@@ -48,7 +48,7 @@ int main() {
             continue;
         }
 
-        std::cout << "Even number: " << i <<std:: endl;
+        std::cout << "Even number: " << i <<std::endl;
     }
 
     return 0;
@@ -66,7 +66,7 @@ The `return` statement is used to exit a function and return a value to the call
 The `goto` statement is used to transfer control to another part of your code. While it can be useful in some cases, it's generally discouraged due to its potential to make code harder to read and maintain.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {

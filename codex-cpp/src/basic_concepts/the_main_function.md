@@ -5,7 +5,7 @@ In C++, the main function is the starting point of your program. It is where you
 Let's look at a simple C++ main function:
 
 > `main.cpp`
-> ```cpp
+> ```cpp,editable
 > #include <iostream>
 >
 > int main() {
@@ -13,11 +13,7 @@ Let's look at a simple C++ main function:
 >     return 0;
 > }
 > ```
->
-> Output
-> ```
-> Hello World!
-> ```
+
 
 In this example, the main function consists of several parts:
 

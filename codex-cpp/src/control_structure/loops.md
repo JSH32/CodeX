@@ -15,7 +15,7 @@ Let's explore each one in more detail!
 The `for` loop is ideal when you know how many times you want the loop to run. Its syntax includes an initialization, a condition, and an update statement.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {
@@ -32,7 +32,7 @@ This loop will print the numbers from 0 to 4. The variable `i` is initialized wi
 The `while` loop is great when you don't know how many times the loop should run, but you do have a condition that determines when it should stop.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {

@@ -19,8 +19,11 @@ command = "mdbook-mermaid"
 
 [output]
 
+[output.html.playground]
+editable = true
+
 [output.html]
-additional-js = ["./sidebar/sidebar.js", "mermaid.min.js", "mermaid-init.js"]
+additional-js = ["./paco.min.js", "./tio-minapi.js", "./sidebar/sidebar.js", "mermaid.min.js", "mermaid-init.js"]
 additional-css = [
     "./theme/catppuccin.css",
     "./theme/catppuccin-highlight.css",

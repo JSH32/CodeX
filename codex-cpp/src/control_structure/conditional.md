@@ -19,7 +19,7 @@ Let's dive into each one in more detail!
 The simplest type of conditional statement is the `if` statement. It checks if a condition is true, and if so, executes the code inside its block.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {
@@ -41,7 +41,7 @@ The `if-else` statement adds another branch for when the condition is false.
 
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {
@@ -65,7 +65,7 @@ In this case, since `age` is less than 18, the message "You are not eligible to 
 The `switch` statement is used when you need to make a decision based on multiple discrete values of a variable. It's a cleaner alternative to using multiple nested `if-else` statements.
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 int main() {

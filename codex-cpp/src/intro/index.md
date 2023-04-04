@@ -34,7 +34,7 @@ Ready to dip your toes in C++? Here's a classic "Hello, World!" example:
 We will break down this code below in future sections.
 ```
 
-```cpp
+```cpp,editable
 #include <iostream>
 
 int main() {

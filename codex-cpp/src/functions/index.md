@@ -33,7 +33,7 @@ return_type function_name(parameter_type parameter1, parameter_type parameter2) 
 ## Example
 
 ~~~admonish example
-```cpp
+```cpp, editable
 #include <iostream>
 
 // Function declaration
