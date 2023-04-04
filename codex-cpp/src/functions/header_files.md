@@ -42,11 +42,17 @@ To use header files in your C++ program, you need to follow these steps:
 
 4. **Implement the declared elements**: In a separate source file (`.cpp` file), provide the implementation for the elements declared in the header file.
 
+```admonish
+The `#include` directive copy and pastes the header file into your source file (`.cpp` file). You may have issues if you end up having the same header file included more than once. To circumvent this, put `#pragma once` at the top of your header file.
+```
+
 ## Example
 ~~~admonish example
 > `my_math_functions.h` (header file)
 > 
 > ```cpp
+> #pragma once
+>
 > // Function declarations
 > int add(int a, int b);
 > int subtract(int a, int b);

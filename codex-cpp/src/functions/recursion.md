@@ -8,9 +8,9 @@ A good example for this is the factorial function.
 flowchart LR
     A["Start"] --> B["Function: factorial(n)"]
     B --> C{Is n <= 1?}
-    C -->|Yes| D["Return 1"]
+    C -->|Yes| D["Return 1 + sum"]
     C -->|No| E["Call factorial(n-1)"]
-    E --> A
+    E --> B
 ```
 ~~~
 
