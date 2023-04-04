@@ -2,6 +2,33 @@
 
 In C++, arrays and pointers are closely related, as they both deal with memory addresses. An array is a contiguous block of memory that stores multiple elements of the same data type, while a pointer is a variable that holds the address of another variable or an array element.
 
+## Iterating through arrays
+```admonish title="Calculating the size of an array"
+In C++, `sizeof(arr) / sizeof(arr[0])` is a common method to calculate the number of elements in an array.
+
+`sizeof(arr)` returns the total size (in bytes) of the array, while `sizeof(arr[0])` returns the size (in bytes) of a single element in the array.
+
+By dividing the total size of the array by the size of a single element, you can obtain the number of elements in that array.
+```
+
+In C++, you can iterate through an arbitrary sized array using a for loop:
+
+
+```cpp,editable
+#include <iostream>
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]); // Calculate the size of the array
+
+    for (int i = 0; i < size; ++i) {
+        std::cout << arr[i] << " ";
+    }
+
+    return 0;
+}
+```
+
 ## Relationship between Arrays and Pointers
 
 Let's assume we have an integer array `arr`:

@@ -30,3 +30,8 @@
     - [Arrays and Pointers](./pointers/arrays.md)
     - [Pointer Arithmatic](./pointers/arithmetic.md)
     - [References](./pointers/references.md)
+- [Data Structures](./data_structures/index.md)
+    - [Multi-Dimensional Arrays](./data_structures/md_array.md)
+    - [Strings & String Functions](./data_structures/strings.md)
+    - [Vectors](./data_structures/vectors.md)
+    - [Iterators](./data_structures/iterators.md)
