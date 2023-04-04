@@ -43,7 +43,7 @@ To use header files in your C++ program, you need to follow these steps:
 4. **Implement the declared elements**: In a separate source file (`.cpp` file), provide the implementation for the elements declared in the header file.
 
 ## Example
-
+~~~admonish example
 > `my_math_functions.h` (header file)
 > 
 > ```cpp
@@ -80,7 +80,7 @@ To use header files in your C++ program, you need to follow these steps:
 >     return 0;
 > }
 > ```
-
 In this example, we have created a header file `my_math_functions.h` that contains the declarations for two functions `add` and `subtract`. We include this header file in both the implementation file `my_math_functions.cpp` and the `main.cpp` file, which uses the functions.
+~~~
 
-By using header files, we have separated the declarations and implementations of the functions, making our code more organized and easier to maintain.
+By using header files, we can separate the declarations and implementations of the functions, making our code more organized and easier to maintain.

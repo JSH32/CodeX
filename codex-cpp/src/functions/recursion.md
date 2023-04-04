@@ -31,7 +31,7 @@ int countWays(int n) {
 }
 ```
 
-~~~admonish tip title="With iteration" collapsible=true
+~~~admonish example title="With iteration" collapsible=true
 ```cpp
 int countWays(int n) {
     if (n == 0) return 1;

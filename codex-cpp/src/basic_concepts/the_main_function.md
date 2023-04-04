@@ -4,14 +4,20 @@ In C++, the main function is the starting point of your program. It is where you
 
 Let's look at a simple C++ main function:
 
-```cpp
-#include <iostream>
-
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
-}
-```
+> `main.cpp`
+> ```cpp
+> #include <iostream>
+>
+> int main() {
+>     std::cout << "Hello, World!" << std::endl;
+>     return 0;
+> }
+> ```
+>
+> Output
+> ```
+> Hello World!
+> ```
 
 In this example, the main function consists of several parts:
 

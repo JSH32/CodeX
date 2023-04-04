@@ -14,8 +14,7 @@ With function overloading, you can define multiple functions with the same name 
 
 Function overloading works by letting the compiler choose the most suitable version of an overloaded function based on how it's called. The compiler does this by matching the number and types of arguments provided during a call with those specified in any available overloaded functions.
 
-Now, let's see some code!
-
+~~~admonish example
 ```cpp
 #include <iostream>
 
@@ -39,8 +38,8 @@ int main() {
     return 0;
 }
 ```
-
 In this example, we defined two overloaded `sum` functions. The first one takes two `int` parameters while the second one takes two `double` parameters. When we call these functions with integer or double values, the compiler automatically selects the appropriate version based on the argument types.
+~~~
 
 ## Best Practices
 

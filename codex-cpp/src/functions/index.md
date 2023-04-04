@@ -32,6 +32,7 @@ return_type function_name(parameter_type parameter1, parameter_type parameter2) 
 
 ## Example
 
+~~~admonish example
 ```cpp
 #include <iostream>
 
@@ -51,8 +52,8 @@ int sum(int a, int b) {
     return total; // Return the result
 }
 ```
-
 In this example, we declare a function called `sum` with a return type of `int` and two input parameters of type `int`. The function definition provides the actual implementation of the `sum` function, which calculates the sum of the input parameters and returns the result. The `sum` function is called from the `main` function, and the result is printed to the console.
+~~~
 
 ## Key Points
 
