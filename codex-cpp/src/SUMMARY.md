@@ -25,3 +25,8 @@
     - [Headers](./functions/header_files.md)
     - [Function Overloading](./functions/overloading.md)
     - [Recursion](./functions/recursion.md)
+- [Pointers and References](./pointers/index.md)
+    - [Pointer Basics](./pointers/basics.md)
+    - [Arrays and Pointers](./pointers/arrays.md)
+    - [Pointer Arithmatic](./pointers/arithmetic.md)
+    - [References](./pointers/references.md)

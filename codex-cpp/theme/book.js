@@ -87,7 +87,7 @@ function playground_text(playground, hidden = true) {
         return node.classList.contains("editable");
       })
       .forEach(function (block) {
-        // block.classList.remove("language-javascript");
+        block.classList.remove("language-cpp");
       });
 
     code_nodes
@@ -109,49 +109,47 @@ function playground_text(playground, hidden = true) {
     block.classList.add("hljs");
   });
 
-  Array.from(document.querySelectorAll("code.language-javascript")).forEach(
-    function (block) {
-      // window.ace.edit(block, {
-      //   mode: "ace/mode/javascript",
-      //   selectionStyle: "text",
-      // });
-      var lines = Array.from(block.querySelectorAll(".boring"));
-      // If no lines were hidden, return
-      if (!lines.length) {
-        return;
-      }
-      block.classList.add("hide-boring");
-
-      var buttons = document.createElement("div");
-      buttons.className = "buttons";
-      buttons.innerHTML =
-        '<button class="fa fa-eye" title="Show hidden lines" aria-label="Show hidden lines"></button>';
-
-      // add expand button
-      var pre_block = block.parentNode;
-      pre_block.insertBefore(buttons, pre_block.firstChild);
-
-      pre_block
-        .querySelector(".buttons")
-        .addEventListener("click", function (e) {
-          if (e.target.classList.contains("fa-eye")) {
-            e.target.classList.remove("fa-eye");
-            e.target.classList.add("fa-eye-slash");
-            e.target.title = "Hide lines";
-            e.target.setAttribute("aria-label", e.target.title);
-
-            block.classList.remove("hide-boring");
-          } else if (e.target.classList.contains("fa-eye-slash")) {
-            e.target.classList.remove("fa-eye-slash");
-            e.target.classList.add("fa-eye");
-            e.target.title = "Show hidden lines";
-            e.target.setAttribute("aria-label", e.target.title);
-
-            block.classList.add("hide-boring");
-          }
-        });
+  Array.from(document.querySelectorAll("code.language-cpp")).forEach(function (
+    block
+  ) {
+    // window.ace.edit(block, {
+    //   mode: "ace/mode/javascript",
+    //   selectionStyle: "text",
+    // });
+    var lines = Array.from(block.querySelectorAll(".boring"));
+    // If no lines were hidden, return
+    if (!lines.length) {
+      return;
     }
-  );
+    block.classList.add("hide-boring");
+
+    var buttons = document.createElement("div");
+    buttons.className = "buttons";
+    buttons.innerHTML =
+      '<button class="fa fa-eye" title="Show hidden lines" aria-label="Show hidden lines"></button>';
+
+    // add expand button
+    var pre_block = block.parentNode;
+    pre_block.insertBefore(buttons, pre_block.firstChild);
+
+    pre_block.querySelector(".buttons").addEventListener("click", function (e) {
+      if (e.target.classList.contains("fa-eye")) {
+        e.target.classList.remove("fa-eye");
+        e.target.classList.add("fa-eye-slash");
+        e.target.title = "Hide lines";
+        e.target.setAttribute("aria-label", e.target.title);
+
+        block.classList.remove("hide-boring");
+      } else if (e.target.classList.contains("fa-eye-slash")) {
+        e.target.classList.remove("fa-eye-slash");
+        e.target.classList.add("fa-eye");
+        e.target.title = "Show hidden lines";
+        e.target.setAttribute("aria-label", e.target.title);
+
+        block.classList.add("hide-boring");
+      }
+    });
+  });
 
   // NOTE: Adding playground class to code block parent
   Array.from(document.querySelectorAll("code.editable")).forEach(function (
@@ -295,12 +293,12 @@ function playground_text(playground, hidden = true) {
       stylesheets.ayuHighlight.disabled = false;
       stylesheets.tomorrowNight.disabled = true;
       stylesheets.highlight.disabled = true;
-      ace_theme = "ace/theme/tomorrow_night";
+      ace_theme = "ace/theme/ayu-dark";
     } else {
       stylesheets.ayuHighlight.disabled = true;
       stylesheets.tomorrowNight.disabled = true;
       stylesheets.highlight.disabled = false;
-      ace_theme = "ace/theme/dawn";
+      ace_theme = "ace/theme/base16-atelier-dune-light";
     }
 
     setTimeout(function () {
@@ -311,7 +309,10 @@ function playground_text(playground, hidden = true) {
 
     if (window.ace && window.editors) {
       window.editors.forEach(function (editor) {
-        editor.setTheme(ace_theme);
+        editor.setOptions({
+          theme: ace_theme,
+          mode: "ace/mode/c_cpp",
+        });
       });
     }
 
