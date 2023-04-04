@@ -23,8 +23,8 @@ To use pointers effectively, we need to understand two important operators: the 
 
 ~~~admonish example title="Address-of Operator"
 ```cpp
-int number = 42;
-int *ptr = &number;
+int  number = 42;
+int* ptr = &number;
 ```
 In this code snippet, we create an integer variable `number` and assign it the value 42. We then create an integer pointer `ptr` and assign it the address of `number`. Now, our pointer `ptr` is pointing to the memory location where `number` is stored.
 ~~~
@@ -38,8 +38,8 @@ The dereference operator (`*`) allows you to access or modify the value stored a
 #include <iostream>
 
 int main() {
-    int number = 42;
-    int *ptr = &number;
+    int  number = 42;
+    int* ptr = &number;
 
     std::cout << *ptr; // Output: 42
     return 0;
@@ -58,8 +58,8 @@ You can also modify the value stored at the memory location by using the derefer
 #include <iostream>
 
 int main() {
-    int number = 42;
-    int *ptr = &number;
+    int  number = 42;
+    int* ptr = &number;
 
     *ptr = 10;
 

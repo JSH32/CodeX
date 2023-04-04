@@ -17,7 +17,7 @@ To understand this better, consider an analogy where each element in the array i
 Now let's create an integer pointer `p` and assign it the base address of our `arr`.
 
 ```cpp
-int *p = arr;
+int* p = arr;
 ```
 
 Here, we created a pointer `p` that points to the first element (room) in our array (hotel). Now we can use this pointer to access individual elements in the array just like using an index
@@ -29,8 +29,8 @@ Here, we created a pointer `p` that points to the first element (room) in our ar
 #include <iostream>
 
 int main() {
-    int arr[5] = {1, 2, 3, 4, 5};
-    int *p = arr;
+    int  arr[5] = {1, 2, 3, 4, 5};
+    int* p = arr;
 
     std::cout << "First element: " << *p << std::endl;        // Output: First element: 1
     std::cout << "Second element: " << *(p + 1) << std::endl; // Output: Second element: 2
