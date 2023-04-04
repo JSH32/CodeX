@@ -30,7 +30,7 @@ int myArray[3][4] = {
 
 ## Multi-Dimensional Arrays
 
-C++ allows you to declare arrays with more than two dimensions by simply adding more square brackets '[]'. 
+C++ allows you to declare arrays with more than two dimensions by simply adding more square brackets `[]`. 
 
 ~~~admonish example title="Declaring a three-dimensional (3D) array"
 ```cpp

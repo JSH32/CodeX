@@ -32,6 +32,7 @@
     - [References](./pointers/references.md)
 - [Data Structures](./data_structures/index.md)
     - [Multi-Dimensional Arrays](./data_structures/md_array.md)
+    - [Intro to Classes and Methods](./data_structures/classes_intro.md)
     - [Strings & String Functions](./data_structures/strings.md)
     - [Vectors](./data_structures/vectors.md)
     - [Iterators](./data_structures/iterators.md)
