@@ -87,14 +87,11 @@ function playground_text(playground, hidden = true) {
           .then((res) => {
             let result = "";
             if (res.data.didExecute) {
-              const out = res.data.stdout.map((msg) => msg.text).join("\n");
-              const err = res.data.stderr.map((msg) => msg.text).join("\n");
-              result += [out, err].join("\n");
+              result += [
+                res.data.stdout.map((msg) => msg.text).join("\n"),
+                res.data.stderr.map((msg) => msg.text).join("\n"),
+              ].join("\n");
             } else {
-              // result += res.data.buildResult.stderr
-              //   .map((msg) => msg.text)
-              //   .join("\n");
-
               result += res.data.buildResult.stderr
                 .map((msg) => msg.text)
                 .join("\n")
@@ -105,9 +102,13 @@ function playground_text(playground, hidden = true) {
             }
 
             result_block.innerText = [
-              `# Exit Code: ${res.data.code}\n`,
+              `# Exit Code: ${res.data.code}${
+                result.length > 0 && result != "\n" ? "\n" : ""
+              }`,
               result,
-            ].join("\n");
+            ]
+              .filter((str) => str != "\n")
+              .join("\n");
           });
       })();
     } catch (error) {
