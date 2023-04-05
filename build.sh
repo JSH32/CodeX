@@ -7,7 +7,7 @@ sites=(
 
 ROOT_DIR=$PWD
 
-rm -r build
+if [ -d "build" ]; then rm -r build; fi
 mkdir build
 cp index.html build
 
