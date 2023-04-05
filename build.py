@@ -3,6 +3,9 @@ import os
 import shutil
 import subprocess
 
+print('Installing dependencies')
+subprocess.call('cargo install mdbook mdbook-admonish mdbook-mermaid', shell=True)
+
 with open('guides.json') as guides_file:
   guides = json.load(guides_file)['guides']
 
