@@ -23,7 +23,7 @@ jobs:
           override: true
       
       - name: Build sites
-        run: ./build.sh
+        run: python3 ./build.py
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -32,4 +32,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: codex
           directory: build
-          branch: production
+          branch: main

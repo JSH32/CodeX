@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeX Foundation</title>
+
+    <!-- Load Manrope Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Add FontAwesome icons -->
+    <script src="https://kit.fontawesome.com/c5dd4c8751.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: "#d32d5f",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Add custom styles for color scheme and font -->
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #ffffff;
+        }
+
+        .index-title {
+            font-size: 48px;
+            margin-top: 30px;
+        }
+
+        .guide-links {
+            list-style-type: none;
+        }
+
+        .guide-links li a {
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <!-- Navbar -->
+    <nav class="navbar bg-accent shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-white font-bold text-xl">CodeX Foundation</a>
+            <!-- Github button -->
+            <a href="https://github.com/JSH32/Codex" rel="noopener noreferrer" class="
+              inline-flex items-center space-x-2
+                border-transparent text-white font-semibold py-2 px-4 hover:drop-shadow-2xl">
+                <i class="fab fa-github text-xl"></i>
+                <span>Github</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class='container mx-auto px-6 py-5'>
+        <h1 class='index-title text-accent'>Welcome to the CodeX Foundation</h1>
+        <p>A Free and Open Source Software (FOSS) public domain initiative dedicated to creating educational materials
+            on a variety of computational topics. Our mission is to provide high-quality resources for learners,
+            enthusiasts, and professionals interested in programming, computer science, data science, artificial
+            intelligence, and other topics.</p>
+        <h2 class="text-xl font-bold mt-8">Guides</h2>
+        <ul class='guide-links'>
+            {{#each guides}}
+            <li><a href="{{this.location}}" class="text-accent hover:brightness-75">{{this.title}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+
+</body>
+
+</html>
