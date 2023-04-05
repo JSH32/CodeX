@@ -2,10 +2,10 @@ name: Cloudflare Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: ["master"]
 
-name: Cloudflare Pages
+permissions:
+  contents: read
 
 jobs:
   publish:
@@ -22,5 +22,6 @@ jobs:
           toolchain: stable
           override: true
       
-      - run: ./build.sh
+      - name: Build sites
+        run: ./build.sh
 
