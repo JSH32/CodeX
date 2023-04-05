@@ -51,16 +51,64 @@ function playground_text(playground, hidden = true) {
     // NOTE: Actual Code Prasing logic
     try {
       (() => {
-        const toRemove = ["Real time", "User time", "Sys. time", "CPU share"];
+        // const toRemove = ["Real time", "User time", "Sys. time", "CPU share"];
 
-        TIO.run(text, "", "cpp-clang").then((res) => {
-          const sanitized = res[1]
-            .split(/\r?\n/)
-            .filter((line) => !toRemove.find((rem) => line.includes(rem)))
-            .join("\n")
-            .replace(/^\s+|\s+$/g, "");
-          result_block.innerText = [res[0], sanitized].join("\n");
-        });
+        // TIO.run(text, "", "cpp-clang").then((res) => {
+        //   const sanitized = res[1]
+        //     .split(/\r?\n/)
+        //     .filter((line) => !toRemove.find((rem) => line.includes(rem)))
+        //     .join("\n")
+        //     .replace(/^\s+|\s+$/g, "");
+        //   result_block.innerText = [res[0], sanitized].join("\n");
+        // });
+
+        axios
+          .post("https://godbolt.org/api/compiler/gsnapshot/compile", {
+            source: text,
+            compiler: "gsnapshot",
+            options: {
+              userArguments: "-O3",
+              executeParameters: {
+                args: [],
+                stdin: "",
+              },
+              compilerOptions: {
+                skipAsm: true,
+                executorRequest: true,
+              },
+              filters: {
+                execute: true,
+              },
+              tools: [],
+            },
+            lang: "c++",
+            allowStoreCodeDebug: true,
+          })
+          .then((res) => {
+            let result = "";
+            if (res.data.didExecute) {
+              const out = res.data.stdout.map((msg) => msg.text).join("\n");
+              const err = res.data.stderr.map((msg) => msg.text).join("\n");
+              result += [out, err].join("\n");
+            } else {
+              // result += res.data.buildResult.stderr
+              //   .map((msg) => msg.text)
+              //   .join("\n");
+
+              result += res.data.buildResult.stderr
+                .map((msg) => msg.text)
+                .join("\n")
+                .replace(
+                  /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+                  ""
+                );
+            }
+
+            result_block.innerText = [
+              `# Exit Code: ${res.data.code}\n`,
+              result,
+            ].join("\n");
+          });
       })();
     } catch (error) {
       result_block.innerText = error;

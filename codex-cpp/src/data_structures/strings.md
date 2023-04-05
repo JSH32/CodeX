@@ -78,7 +78,7 @@ int main() {
 
 ### Modifying Strings
 
-**Appending strings**: `append(str)` or `operator+=(str)` appends another string or character to the end of the current string.
+**Appending strings**: `append(std::string)` or `operator+=(std::string)` appends another string or character to the end of the current string.
 ```cpp,editable
 #include <iostream>
 #include <string>
@@ -94,7 +94,7 @@ int main() {
 }
 ```
 
-**Inserting characters**: `insert(pos, str)` inserts a string or character at a specified position.
+**Inserting characters**: `insert(pos, std::string)` inserts a string or character at a specified position.
 
 ```cpp,editable
 #include <iostream>
@@ -128,7 +128,7 @@ int main() {
 
 ### Searching and Comparing
 
-**Finding occurrences**: `find(str)` Searches for the first occurrence of a substring and returns its starting position. If not found, it returns the `std::string::npos` constant (or `-1`).
+**Finding occurrences**: `find(std::string)` Searches for the first occurrence of a substring and returns its starting position. If not found, it returns the `std::string::npos` constant (or `-1`).
 
 ```cpp,editable
 #include <iostream>
@@ -145,7 +145,7 @@ int main() {
 }
 ```
 
-**Comparing strings**: `compare(str)` Compares two strings. Returns 0 if they're equal, a positive value if the first string is greater than the second one, and a negative value otherwise.
+**Comparing strings**: `compare(std::string)` Compares two strings. Returns 0 if they're equal, a positive value if the first string is greater than the second one, and a negative value otherwise.
 
 ```cpp,editable
 #include <iostream>
@@ -166,6 +166,138 @@ int main() {
 }
 ```
 
-## Conclusion
+## C-style Strings and String Functions
 
-`std::string` is a versatile and easy-to-use class for string manipulation in C++. It provides many functions to access, modify, search, and compare strings. Using `std::string` instead of C-style character arrays can make your code safer and more readable.
+C-style strings are a way to represent character sequences in C++ using arrays of characters. These strings are terminated by a special character called the null terminator (`\0`). The null terminator indicates the end of the string and is essential for various string manipulation functions.
+
+### Declaring C-style Strings
+
+You can declare and initialize a C-style string in several ways:
+
+1. Using an array with size specification:
+```cpp
+char str[6] = "Hello";
+```
+
+2. Without specifying the size, let the compiler determine it:
+```cpp
+char str[] = "Hello";
+```
+
+3. As a pointer to a constant character sequence (not modifiable):
+```cpp
+const char* str = "Hello";
+```
+
+Remember that when declaring an array, one extra space is needed for the null terminator.
+
+### Basic String Functions
+
+C++ provides several useful functions for manipulating C-style strings, which are available by including the `<cstring>` header file.
+
+Here are some common string functions:
+
+- `strlen(str)`: returns the length of `str` (excluding the null terminator).
+- `strcpy(dest, src)`: copies the contents of `src` (including null terminator) into `dest`.
+- `strcat(dest, src)`: appends `src` at the end of `dest`.
+- `strcmp(str1, str2)`: compares two strings lexicographically; returns 0 if equal, <0 if `str1` comes before `str2`, >0 otherwise.
+
+~~~admonish example
+```cpp,editable
+#include <iostream>
+#include <cstring>
+
+int main() {
+    const char* greeting = "Hello";
+    char name[] = "Alice";
+
+    // Calculate lengths
+    std::cout << "Length of greeting: " << strlen(greeting) << std::endl;
+    std::cout << "Length of name: " << strlen(name) << std::endl;
+
+    // Concatenate strings
+    char combined[12];
+    strcpy(combined, greeting);
+    strcat(combined, ", ");
+    strcat(combined, name);
+    std::cout << "Combined: " << combined << std::endl;
+
+    // Compare strings
+    if (strcmp(name, "Alice") == 0) {
+        std::cout << "Name is Alice" << std::endl;
+    } else {
+        std::cout << "Name is not Alice" << std::endl;
+    }
+
+    return 0;
+}
+```
+~~~
+
+## String Views
+
+### What is std::string_view?
+
+`std::string_view` is a lightweight, read-only view into a sequence of characters (i.e., a string). It was introduced in C++17 as an efficient way to work with strings without creating copies or modifying the original string. You can think of `std::string_view` as a window that allows you to look into a string and perform various operations on it without actually making any changes.
+
+### Why use std::string_view?
+
+1. **Performance**: Since `std::string_view` does not own its data and only provides a view into the underlying string, no memory allocation or deallocation is involved when working with it. This makes it faster than using `std::string` in many cases.
+2. **Flexibility**: `std::string_view` can work with different types of strings like null-terminated C-style strings, `std::string`, or even custom string classes.
+3. **Read-only**: As `std::string_view` is read-only, it ensures that the original string remains unmodified during operations.
+
+### How to use std::string_view?
+
+To use `std::string_view`, you need to include the `<string_view>` header:
+
+~~~admonish example
+```cpp,editable
+#include <iostream>
+#include <string>
+#include <string_view>
+
+int main() {
+    std::string myString = "Hello, World!";
+    std::string_view myStringView(myString);
+
+    // Print both the original string and the string view
+    std::cout << "Original String: " << myString << std::endl;
+    std::cout << "String View: " << myStringView << std::endl;
+
+    return 0;
+}
+```
+In this example, we create a `std::string`, and then create a `std::string_view` that refers to the same sequence of characters. When we print both the original string and the string view, they display the same content.
+~~~
+
+### Using std::string_view with functions
+
+You can use `std::string_view` as an argument in a function that works with strings. This makes your code more efficient and flexible
+
+~~~admonish example
+```cpp,editable
+#include <iostream>
+#include <string>
+#include <string_view>
+
+// Function that takes a std::string_view as argument
+void printLength(std::string_view str) {
+    std::cout << "Length of '" << str << "' is: " << str.length() << std::endl;
+}
+
+int main() {
+    std::string myString = "Hello, World!";
+    const char* myCString = "Hello, C++!";
+    
+    // Call the function with different types of strings
+    printLength(myString);
+    printLength(myCString);
+    printLength("This is a literal");
+
+    return 0;
+}
+```
+In this example, we define a function `print_length()` that accepts a `std::string_view` and prints its length. We then call this function using both `std::string` and a C-style string (null-terminated character array). The output shows the correct length for both types of strings without any type conversion or copying.
+~~~
+
+Remember that since `std::string_view` is read-only, you should not use it if you need to modify the string or if you need to store it beyond the lifetime of the original string. In those cases, you should stick to using `std::string`.
