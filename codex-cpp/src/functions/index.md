@@ -10,7 +10,7 @@ In C++, functions are blocks of code that perform a specific task and can be cal
 
 **Function call (or invocation)**: A function call is a statement in the program that requests the execution of a specific function. When a function is called, the control is transferred to the function definition, and after the function has finished executing, the control is returned to the point in the program where the function was called.
 
-**Parameters (or arguments)**: Parameters, also known as arguments, are the input values that a function receives when it is called. They are declared within the parentheses in the function definition and function declaration.
+**Parameters**: Parameters, are the input values that a function receives when it is called. They are declared within the parentheses in the function definition and function declaration. When calling a function with values these are called arguments.
 
 **Return type**: The return type is the data type of the value that a function returns after its execution. If a function does not return any value, its return type is `void`.
 

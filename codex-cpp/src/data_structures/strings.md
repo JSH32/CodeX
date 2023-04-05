@@ -244,7 +244,7 @@ int main() {
 
 1. **Performance**: Since `std::string_view` does not own its data and only provides a view into the underlying string, no memory allocation or deallocation is involved when working with it. This makes it faster than using `std::string` in many cases.
 2. **Flexibility**: `std::string_view` can work with different types of strings like null-terminated C-style strings, `std::string`, or even custom string classes.
-3. **Read-only**: As `std::string_view` is read-only, it ensures that the original string remains unmodified during operations.
+3. **Read-only**: As `std::string_view` is read-only, it ensures that the original string remains unmodified during operations. This allows it to cache it's length instead of calling `strlen` repeatedly.
 
 ### How to use std::string_view?
 
@@ -272,7 +272,7 @@ In this example, we create a `std::string`, and then create a `std::string_view`
 
 ### Using std::string_view with functions
 
-You can use `std::string_view` as an argument in a function that works with strings. This makes your code more efficient and flexible
+You can use `std::string_view` as an parameter in a function that works with strings. This makes your code more efficient and flexible
 
 ~~~admonish example
 ```cpp,editable
@@ -280,7 +280,7 @@ You can use `std::string_view` as an argument in a function that works with stri
 #include <string>
 #include <string_view>
 
-// Function that takes a std::string_view as argument
+// Function that takes a std::string_view an argument.
 void printLength(std::string_view str) {
     std::cout << "Length of '" << str << "' is: " << str.length() << std::endl;
 }
@@ -297,7 +297,7 @@ int main() {
     return 0;
 }
 ```
-In this example, we define a function `print_length()` that accepts a `std::string_view` and prints its length. We then call this function using both `std::string` and a C-style string (null-terminated character array). The output shows the correct length for both types of strings without any type conversion or copying.
+In this example, we define a function `print_length()` that accepts a `std::string_view` and prints its length. We then call this function using both `std::string` and a C-style string (null-terminated character array). The output shows the correct length for both types of strings without owning or copying the memory holding the string's data.
 ~~~
 
-Remember that since `std::string_view` is read-only, you should not use it if you need to modify the string or if you need to store it beyond the lifetime of the original string. In those cases, you should stick to using `std::string`.
+Remember that since `std::string_view` is read-only, you should not use it if you need to modify the string or if you need to store it beyond the lifetime of the original string. In those cases, you should stick to using `std::string`. Primarily, `std::string_view` is used for consuming the content of a string (eg. string arguments). However, it also plays a crucial role in manipulating the string's view by performing complex substring-like operations. This becomes particularly relevant in parsing tasks where expensive string operations are carried out, such as removing prefixes or utilizing indices. By using `std::string_view`, one can efficiently abstract these calculations without creating new strings in the process.
