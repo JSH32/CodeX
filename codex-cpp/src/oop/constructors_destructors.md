@@ -178,3 +178,41 @@ int main() {
 ```
 In this example, we've deleted the copy constructor and assignment operator for the `Dog` class. This will prevent instances of this class from being copied or assigned to one another.
 ~~~
+
+## Header files
+
+In C++, it is common practice to separate class declarations from their definitions. This is done using [header files](../functions/header_files.md) (with the `.h` or `.hpp` extension) for declarations and *source files* (with the `.cpp` extension) for definitions.
+
+However, to keep things simple in this guide, we will declare and define our classes within a single file. Although this is not recommended for large projects, it's perfectly fine when learning or working on small programs.
+
+~~~admonish example
+> `Car.hpp`
+> ```cpp
+> #include <string>
+>
+> class Car {
+> public:
+>     Car(const std::string& brand, int year);
+>     
+>     void honk();
+>    
+> private:
+>     std::string brand;
+>     int year;
+> };
+> ```
+> `Car.cpp`
+> ```cpp
+> #include "Car.hpp"
+> #include <iostream>
+>
+> Car::Car(const std::string& brand, int year)
+>   : brand(brand), year(year) {}
+> 
+> void Car::honk() {
+>     std::cout << "Honk! I'm a " << brand << " car from " << year << ".\n";
+> }
+> ```
+~~~
+
+In this guide, we will continue to declare and define classes within the same file for simplicity. However, keep in mind that it is good practice to separate them as shown above when working on real-world projects.
