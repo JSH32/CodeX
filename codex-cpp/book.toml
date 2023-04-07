@@ -20,7 +20,13 @@ command = "mdbook-mermaid"
 editable = true
 
 [output.html]
-additional-js = ["./axios.min.js", "./sidebar/sidebar.js", "mermaid.min.js", "mermaid-init.js"]
+additional-js = [
+    "./axios.min.js",
+    "./sidebar/sidebar.js",
+    "mermaid.min.js",
+    "mermaid-init.js"
+]
+
 additional-css = [
     "./sidebar/style.css",
     "././mdbook-admonish.css"
