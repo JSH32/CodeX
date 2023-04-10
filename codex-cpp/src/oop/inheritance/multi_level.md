@@ -29,7 +29,7 @@ direction LR
 #include <iostream>
 
 // Base Class
-class Animal{
+class Animal {
 public:
     void eat() {
         std::cout << "Eating..." << std::endl;
