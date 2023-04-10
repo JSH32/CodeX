@@ -3,6 +3,10 @@
     {
       "title": "C++, Introduction for Entry Level Programmers",
       "location": "codex-cpp"
+    },
+    {
+      "title": "JavaScript, From Fundamentals to Fullstack",
+      "location": "codex-js"
     }
   ]
 }

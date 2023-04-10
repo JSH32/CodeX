@@ -27,44 +27,14 @@ function playground_text(playground, hidden = true) {
       code_block.append(result_block);
     }
 
-    let text = playground_text(code_block);
-    let classes = code_block.querySelector("code").classList;
-    let edition = "2015";
-    if (classes.contains("edition2018")) {
-      edition = "2018";
-    } else if (classes.contains("edition2021")) {
-      edition = "2021";
-    }
-    var params = {
-      version: "stable",
-      optimize: "0",
-      code: text,
-      edition: edition,
-    };
-
-    if (text.indexOf("#![feature") !== -1) {
-      params.version = "nightly";
-    }
-
     result_block.innerText = "Running...";
 
-    // NOTE: Actual Code Prasing logic
+    // NOTE: Actual Code running logic
     try {
       (() => {
-        // const toRemove = ["Real time", "User time", "Sys. time", "CPU share"];
-
-        // TIO.run(text, "", "cpp-clang").then((res) => {
-        //   const sanitized = res[1]
-        //     .split(/\r?\n/)
-        //     .filter((line) => !toRemove.find((rem) => line.includes(rem)))
-        //     .join("\n")
-        //     .replace(/^\s+|\s+$/g, "");
-        //   result_block.innerText = [res[0], sanitized].join("\n");
-        // });
-
         axios
           .post("https://godbolt.org/api/compiler/gsnapshot/compile", {
-            source: text,
+            source: playground_text(code_block),
             compiler: "gsnapshot",
             options: {
               userArguments: "-O3",
@@ -129,8 +99,6 @@ function playground_text(playground, hidden = true) {
     });
 
   if (window.ace) {
-    // language-javascript class needs to be removed for editable
-    // blocks or highlightjs will capture events
     code_nodes
       .filter(function (node) {
         return node.classList.contains("editable");
@@ -161,10 +129,6 @@ function playground_text(playground, hidden = true) {
   Array.from(document.querySelectorAll("code.language-cpp")).forEach(function (
     block
   ) {
-    // window.ace.edit(block, {
-    //   mode: "ace/mode/javascript",
-    //   selectionStyle: "text",
-    // });
     var lines = Array.from(block.querySelectorAll(".boring"));
     // If no lines were hidden, return
     if (!lines.length) {

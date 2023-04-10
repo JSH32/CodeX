@@ -1,0 +1,24 @@
+[book]
+authors = ["JSH32"]
+language = "en"
+multilingual = false
+src = "src"
+title = "CodeX: JavaScript, From Fundamentals to Fullstack"
+
+[preprocessor]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+
+[output.html.playground]
+editable = true
+
+[output.html]
+additional-css = ["./sidebar/style.css", "././mdbook-admonish.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js", "./sidebar/sidebar.js"]
