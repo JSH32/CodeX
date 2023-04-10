@@ -3,7 +3,7 @@ authors = ["JSH32"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Codex: C++, Introduction for Entry Level Programmers"
+title = "CodeX: C++, Introduction for Entry Level Programmers"
 
 [preprocessor]
 
