@@ -92,7 +92,6 @@ Public members are accessible from any part of the code that can access the obje
 Private members can only be accessed from within the same class. They cannot be accessed from outside the class or derived classes. They are declared using the keyword `private`. You can think of private members like a secret recipe hidden inside a chef's cookbook that only they can see.
 
 ~~~admonish example
-
 ```cpp,editable
 #include <iostream>
 
