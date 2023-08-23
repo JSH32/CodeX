@@ -5,4 +5,5 @@ Data structures are specialized formats for efficiently organizing, storing, and
 - [Multi-Dimensional Arrays](./md_array.md)
 - [Strings & String Functions](./strings.md)
 - [Vectors](./vectors.md)
+- [Maps](./maps.md)
 - [Iterators](./iterators.md)

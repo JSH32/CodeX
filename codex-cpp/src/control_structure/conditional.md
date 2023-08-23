@@ -92,5 +92,35 @@ int main() {
 In this case, since `day` is equal to `3`, the output will be `"Wednesday"`.
 ~~~
 
+## Ternary Operator
+The ternary operator in C++ is a shorthand way of writing simple `if...else` statements. It's called "ternary" because it involves three operands.
 
-That's it! You can start adding logic and decision-making capabilities to your programs!
+It takes the following form:
+
+```cpp
+condition ? expression_if_true : expression_if_false
+```
+
+If `condition` is true, then `expression_if_true` is evaluated and returned. Otherwise, `expression_if_false` is evaluated and returned.
+
+~~~admonish example title="Ternary"
+```cpp,editable
+#include <iostream>
+
+int main() {
+    int a = 10;
+    int b = 20;
+
+    int min = (a < b) ? a : b;
+
+    std::cout << min << std::endl;
+
+    return 0;
+}
+```
+~~~
+
+
+In this example, the `a < b` condition checks if `a` is less than `b`. If so, it evaluates to `a` (the expression before the colon), and `a` is assigned to `min`. If the condition `a < b` is false (meaning `b` is less than `a`), then the expression after the colon (`b`) is evaluated and assigned to `min`.
+
+This is an extremely useful operator that can help simplify your code when working with simple conditional expressions.
