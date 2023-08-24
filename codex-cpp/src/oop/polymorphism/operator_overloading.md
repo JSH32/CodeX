@@ -216,3 +216,39 @@ int main() {
 
 In the `SmartPtr` class, we overloaded the arrow operator. When we create an object of this proxy class and access the member function `func()`, it essentially provides access to the `Test` class member function, allowing it to be used like the traditional dereference-and-dot (`->`) operator.
 ~~~
+
+## Pipe (Insertion and Extraction) Operators `<<` and `>>`
+
+In the context of operator overloading, the pipe operators `<<` and `>>` also play a significant role. These operators are used for sending formatted output to standard output devices, or for receiving formatted input from standard input devices.
+
+### Insertion Operator `<<`
+
+The insertion operator `<<` is a binary operator that is used to output the data. Its left operand is an `ostream` object (like `cout`), and the right operand is the value to be output.
+
+```cpp
+ostream& operator << (ostream& out);
+```
+
+### Extraction Operator `>>`
+
+The extraction operator `>>` also is a binary operator and is essentially the opposite of the insertion operator. It is used to read data from input. Its left operand is an `istream` object (like `cin`), and the right operand is where the input will be stored.
+
+```cpp
+istream& operator >> (istream& in);
+```
+
+Examples of overloading these operators are widely seen in standard library implementations, but they can also be overloaded in user defined classes for custom behavior.
+
+~~~admonish note title = "How does `std::cout` actually work?"
+You might be wondering how statements like `std::cout << "Hello World!" << std::endl;` have been functioning in your C++ programs.
+
+The `std::cout` is an instance of `std::ostream` and the `<<` operator here is actually an overloaded operator. The `std::ostream` class that `cout` is an instance of has member functions for `operator<<` overloaded for different types like `int`, `float`, `double`, `const char*` etc. This is what allows us to call `cout << variable` for variables of different data types.
+
+Then we can chain calls to the `<<` operator because each `<<` operator call returns a reference to `cout`. So `cout << "Hello" << " World!" << std::endl;` is equivalent to `((cout << "Hello") << " World!") << std::endl;`.
+
+Each call to `<<` returns the `cout` reference allowing the next `<<` to be called on that reference. This mechanism is known as method chaining.
+
+It's also important to note that the `std::endl` is a manipulator that writes a newline and flushes the stream.
+
+So, `std::cout`, `<<`, and `std::endl` working in unison give us the intuitive operation that we use so often to print values on the console.
+~~~
