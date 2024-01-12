@@ -9,7 +9,7 @@ title = "CodeX: C++, Introduction for Entry Level Programmers"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
-assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
+assets_version = "3.0.2"    # do not edit: managed by `mdbook-admonish install`
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
@@ -19,15 +19,15 @@ command = "mdbook-mermaid"
 [output.html.playground]
 editable = true
 
+[preprocessor.pagetoc]
+
 [output.html]
 additional-js = [
     "./axios.min.js",
-    "./sidebar/sidebar.js",
+    # "./sidebar/sidebar.js",
     "mermaid.min.js",
-    "mermaid-init.js"
+    "mermaid-init.js",
+    "theme/pagetoc.js",
 ]
 
-additional-css = [
-    "./sidebar/style.css",
-    "././mdbook-admonish.css"
-]
+additional-css = ["./mdbook-admonish.css", "theme/pagetoc.css"]
